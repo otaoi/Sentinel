@@ -26,14 +26,14 @@ def generate_grid_map(data):
         t = hero_sensor['temp']
         
         if s == "fire":
-            # IGNITION SPREAD VISUALIZATION
+            # spread of fire visualized conveniently with emojis
             grid[center_idx][center_idx] = "🔥" 
-            # Inner Ring (Red)
+            # inner red ring
             for i in range(-1, 2):
                 for j in range(-1, 2):
                     if i==0 and j==0: continue
                     grid[center_idx+i][center_idx+j] = "🔴"
-            # Outer Ring (Orange)
+            # outer orange ting
             grid[center_idx-2][center_idx] = "🟠"
             grid[center_idx+2][center_idx] = "🟠"
             grid[center_idx][center_idx-2] = "🟠"
