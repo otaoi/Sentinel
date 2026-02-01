@@ -28,7 +28,7 @@ async def dataingestor(data: SensorData): #non blocking post with SensorData
     package = data.json()
 
     #list push into fire_stream list fifo
-    r.lpush("fire_stream",payload)
+    r.lpush("fire_stream",package)
 
     #i dont wanna kill my ram so only keeping the first 2000 items
     r.ltrim("fire_stream", 0, 2000)
